@@ -1,0 +1,19 @@
+	syntax = "proto3";
+	
+	option java_multiple_files = true;
+	option java_package = "com.apogee.gnss.example";
+	
+	service FormServce{
+	  rpc ServerSideStreaming(FormRequest) returns (stream FormResponse) {};	  
+	}
+	
+message FormRequest {
+  string user_id = 1;
+}
+
+message FormResponse {
+  int32 form_id = 1;
+  string remark = 2;
+  string form_name = 3;
+}
+
